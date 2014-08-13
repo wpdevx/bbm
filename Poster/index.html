@@ -7,12 +7,16 @@
     <script type="text/javascript" src="lib/underscore.js"></script>
     <script type="text/javascript" src="lib/backbone.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/model/PostModel.js"></script>
     <script type="text/javascript" src="js/view/PostContinerView.js"></script>
     <script type="text/javascript" src="js/view/PostListView.js"></script>
     <script type="text/javascript" src="js/view/PostView.js"></script>
-    <script type="text/javascript" src="js/model/PostModel.js"></script>
     <title></title>
 </head>
 <body>
+<script type="text/template" id="postListTemplate">
+    <h1><%= author  %></h1>
+    <li><%= content %></li>
+</script>
 </body>
 </html>
