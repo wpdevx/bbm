@@ -3,7 +3,7 @@
  */
 console.log('start func');
 
-window.App = {
+App = {
     Models: {},
     Collections: {},
     Views: {}

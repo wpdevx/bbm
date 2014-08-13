@@ -17,8 +17,13 @@ App.Views.PostContainer = Backbone.View.extend({
         return this;
     },
 
-    addOne: function(postModel) {
-        var postListView = new App.Views.PostListView({ model: postModel });
-        this.$el.append(this.postListView.render().el);
+    addOne: function(person) {
+        var personView = new App.Views.PostListView({ model: person });
+        this.$el.append(personView.render().el);
     }
+
+//    addOne: function(postModel) {
+//        var postListView = new App.Views.PostListView({ model: postModel });
+//        this.$el.append(postListView.render().el);
+//    }
 });
