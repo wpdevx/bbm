@@ -38,7 +38,9 @@ $(document).ready(function () {
 
 
     postContainerView = new App.Views.PostContainer({ collection: postCollection });
-    $(document.body).append(postContainerView.render().el);
+    //$(document.body).append(postContainerView.render().el);
+    var activitiesListContainer = $('#posts-main').find(":jqmData(role='content')").append(postContainerView.render().el);
+
     Backbone.history.start();
 });
 

@@ -6,6 +6,8 @@ App.Views.PostContainer = Backbone.View.extend({
 
     tagName : "ul",
 
+    attributes: { "data-role" : "listview"},
+
     initialize: function() {
         this.collection.on('add', this.addOne, this);
     },
