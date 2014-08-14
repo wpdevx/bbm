@@ -20,22 +20,21 @@ $(document).ready(function () {
 
     var postCollection = new App.Collections.PostCollection([
         {
-            id: 1,
-            author: 'Mohit Jain',
+            id: 3,
+            author: 'Mohit Jain 3',
             content: 'lorem ipsum'
         },
         {
             id: 2,
-            author: 'Mohit ssssssJain',
+            author: 'Mohit ssssssJain 2 ',
             content: 'lorem iaaaaapsum'
         },
         {
-            id: 3,
-            author: 'Mohitad Jaasdadin',
+            id: 1,
+            author: 'Mohitad Jaasdadin 1',
             content: 'lorem ipasdasdsum'
         }
     ]);
-
 
     postContainerView = new App.Views.PostContainer({ collection: postCollection });
     //$(document.body).append(postContainerView.render().el);

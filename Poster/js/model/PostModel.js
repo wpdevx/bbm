@@ -10,5 +10,8 @@ App.Models.PostModel = Backbone.Model.extend({
 });
 
 App.Collections.PostCollection = Backbone.Collection.extend({
-    model : App.Models.PostModel
+    model : App.Models.PostModel,
+    comparator: function(item) {
+        return item.get("id");
+    }
 });
