@@ -17,6 +17,12 @@ App.Views.PostContainer = Backbone.View.extend({
             self.collection.add(postTmep);
             return false;
         });
+
+        $('#listview').on('click', 'li', function() {
+            console.log('lc');
+            alert("Works"); // id of clicked li by directly accessing DOMElement property
+        });
+
         this.collection.on('add', this.render, this);
         this.collection.on('remove', this.removePost, this);
     },

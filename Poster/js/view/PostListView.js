@@ -13,6 +13,10 @@ App.Views.PostListView = Backbone.View.extend({
 
     initialize : function (options) {
         this.posts = options.posts;
+        $('#listview').on('click', 'li', function() {
+            console.log('lc');
+            alert("Works"); // id of clicked li by directly accessing DOMElement property
+        });
     },
 
     render : function()
