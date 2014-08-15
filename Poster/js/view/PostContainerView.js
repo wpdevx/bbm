@@ -4,40 +4,46 @@
 console.log('view');
 App.Views.PostContainer = Backbone.View.extend({
 
-    tagName : "ul",
+    tagName: "ul",
 
-    attributes: { "data-role" : "listview"},
+    attributes: { "data-role": "listview"},
 
-    initialize: function() {
+    initialize: function () {
         var self = this;
-        $('#add-button').on('click', function() {
+        $('#add-button').on('click', function () {
             console.log("add");
-            var id = Math.floor(Math.random() * (15 - 1 + 1)) + 1
-            var postTmep = new App.Models.PostModel({ author: "lol" + id , id : id, content : "lpasdasdasd"});
+            var id = Math.floor(Math.random() * (100 - 1 + 1)) + 1
+            var postTmep = new App.Models.PostModel({ author: "lol" + id, id: id, content: "lpasdasdasd"});
             self.collection.add(postTmep);
-            self.render();
             return false;
         });
-        this.collection.on('add', this.addOne, this);
+        this.collection.on('add', this.render, this);
+        this.collection.on('remove', this.removePost, this);
     },
 
-    render: function() {
+    render: function () {
         console.log(this.collection.length)
+        this.$el.empty();
         this.collection.each(this.addOne, this);
 
         return this;
     },
 
-    addOne: function(person) {
-        var personView = new App.Views.PostListView({ model: person });
-        this.collection.sort(this.collection.comparator);
-        this.$el.append(personView.render().el);
+    addOne: function (post) {
+        var postView = new App.Views.PostListView({ model: post, posts: this.collection });
+        //this.collection.sort(this.collection.comparator);
+        this.$el.append(postView.render().el);
+    },
+
+    removePost: function () {
+        console.log('removeEvent');
+        this.render();
     },
 
 
-    addToCollection : function() {
+    addToCollection: function () {
         console.log("add");
-        var postTmep = new App.Models.PostModel({ author: "lol", id : "0", content : "lpasdasdasd" });
+        var postTmep = new App.Models.PostModel({ author: "lol", id: "0", content: "lpasdasdasd" });
         this.collection.add(postTmep);
         return false;
     }

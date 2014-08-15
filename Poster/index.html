@@ -9,6 +9,7 @@
 <body>
 <script type="text/template" id="postListTemplate">
     <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c">
+        <a class="ui-btn back-button" href="#">Remove</a>
         <h1><%= author %></h1>
         <%= content %>
     </li>
@@ -29,7 +30,7 @@
     <div data-role="header">
         <h1>Activities</h1>
         <!--<a href="#" data-role="button" data-icon="add" id="add-button" class="back ui-btn-left">Add</a>-->
-        <a href="#" id ="add-button" class="back-button ui-btn-left">Add</a>
+        <a href="#" id="add-button" class="back-button ui-btn-left">Add</a>
     </div>
     <div data-role="content">
         <!-- the contents of the list view will be rendered via the backbone view -->
