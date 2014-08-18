@@ -39,8 +39,8 @@ $(document).ready(function () {
 
     //$(document.body).append(postContainerView.render().el);
 
-    $.mobile.hashListeningEnabled = false;
-    $.mobile.linkBindingEnabled = false;
+    $.mobile.hashListeningEnabled = false; //to read hashes
+    $.mobile.linkBindingEnabled = false; //to read hashes
 
     var router = new App.Routers.Router({collection : postCollection});
 

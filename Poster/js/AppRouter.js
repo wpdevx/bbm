@@ -24,7 +24,6 @@ App.Routers.Router = Backbone.Router.extend({
 
     postDetail: function(data){
         console.log('pD' + data);
-
     },
     changePage:function (page) {
         //$(page.el).attr('data-role', 'lo');

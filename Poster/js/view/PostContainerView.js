@@ -6,17 +6,14 @@ App.Views.PostContainer = Backbone.View.extend({
 
     tagName: "ul",
 
-    attributes: { "data-role": "listview"},
+    attributes: {
+        "data-role": "listview",
+        "class" : "listTop"
+    },
 
     initialize: function () {
         var self = this;
-        $('#add-button').on('click', function () {
-            console.log("add");
-            var id = Math.floor(Math.random() * (100 - 1 + 1)) + 1
-            var postTmep = new App.Models.PostModel({ author: "lol" + id, id: id, content: "lpasdasdasd"});
-            self.collection.add(postTmep);
-            return false;
-        });
+        //$('#add-button').on('click', this.addPost(), this);
 
         $('#listview').on('click', 'li', function() {
             console.log('lc');
@@ -36,19 +33,20 @@ App.Views.PostContainer = Backbone.View.extend({
         console.log(this.collection.length)
         this.$el.empty();
         this.collection.each(this.addOne, this);
+        $('ul').listview('refresh'); //todo: to avoid css losing, refreshing
         return this;
     },
 
     addOne: function (post) {
         var postView = new App.Views.PostListView({ model: post, posts: this.collection });
-        //this.collection.sort(this.collection.comparator);
-        this.$el.append(postView.render().el);
+        this.$el.append(postView.render().el).trigger("create");
     },
 
     removePost: function () {
         console.log('removeEvent');
         this.render();
     },
+
 
 
     addToCollection: function () {

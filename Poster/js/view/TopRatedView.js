@@ -13,8 +13,12 @@ App.Views.TopRated = Backbone.View.extend({
         "data-role": "page",
         "class": "ui-page ui-body-c ui-page-active broke-endless-pages"},
 
+    events : {
+        "click .add-button": "addPost"
+    },
+
     initialize: function () {
-//        var self = this;
+        var self = this;
 //        $('#add-button').on('click', function () {
 //            console.log("add");
 //            var id = Math.floor(Math.random() * (100 - 1 + 1)) + 1
@@ -45,27 +49,11 @@ App.Views.TopRated = Backbone.View.extend({
         return this;
     },
 
-    addOne: function (post) {
-        var postView = new App.Views.PostListView({ model: post, posts: this.collection });
-        //this.collection.sort(this.collection.comparator);
-        this.$el.append(postView.render().el);
-    },
-
-    removePost: function () {
-        console.log('removeEvent');
-        this.render();
-    },
-
-
-    addToCollection: function () {
+    addPost : function(){
         console.log("add");
-        var postTmep = new App.Models.PostModel({ author: "lol", id: "0", content: "lpasdasdasd" });
+        var id = Math.floor(Math.random() * (100 - 1 + 1)) + 1
+        var postTmep = new App.Models.PostModel({ author: "lol" + id, id: id, content: "lpasdasdasd"});
         this.collection.add(postTmep);
         return false;
     }
-
-//    addOne: function(postModel) {
-//        var postListView = new App.Views.PostListView({ model: postModel });
-//        this.$el.append(postListView.render().el);
-//    }
 });
