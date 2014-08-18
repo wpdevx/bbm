@@ -23,6 +23,11 @@ App.Views.PostContainer = Backbone.View.extend({
             alert("Works"); // id of clicked li by directly accessing DOMElement property
         });
 
+        $(document).on("click", "#listview li" ,function (event) {
+           console.log("li cl");
+            alert($(this).text());
+        });
+
         this.collection.on('add', this.render, this);
         this.collection.on('remove', this.removePost, this);
     },
@@ -31,7 +36,6 @@ App.Views.PostContainer = Backbone.View.extend({
         console.log(this.collection.length)
         this.$el.empty();
         this.collection.each(this.addOne, this);
-
         return this;
     },
 

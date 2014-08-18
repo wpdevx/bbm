@@ -38,6 +38,10 @@ $(document).ready(function () {
     ]);
 
     //$(document.body).append(postContainerView.render().el);
+
+    $.mobile.hashListeningEnabled = false;
+    $.mobile.linkBindingEnabled = false;
+
     var router = new App.Routers.Router({collection : postCollection});
 
     Backbone.history.start();

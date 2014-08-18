@@ -4,7 +4,7 @@
 App.Routers.Router = Backbone.Router.extend({
     routes:{
         "":"home",
-        "postDetail/:id": "postDetail"
+        "postDetails?:id": "postDetail"
     },
 
     initialize:function (data) {
@@ -15,24 +15,30 @@ App.Routers.Router = Backbone.Router.extend({
 
     home: function(){
       console.log('home');
-        postContainerView = new App.Views.PostContainer({ collection: this.data });
-        var activitiesListContainer = $('#posts-main').find(":jqmData(role='content')").append(postContainerView.render().el);
+        //var topRatedView = new App.Views.TopRated({ collection: this.data });
+        this.changePage(new App.Views.TopRated({ collection: this.data }));
+        //var activitiesListContainer = $('body').append(topRatedView.render().el);
+        //var activitiesListContainer = $('#main').find(":jqmData(role='content')").append(postContainerView.render().el);
+        //var activitiesListContainer = $('body').append(postContainerView.render().el);
     },
 
     postDetail: function(data){
-        console.log('pD');
+        console.log('pD' + data);
+
     },
     changePage:function (page) {
-        $(page.el).attr('data-role', 'page');
-        page.render();
-        $('body').append($(page.el));
-        var transition = $.mobile.slideUp;
-        // We don't want to slide the first page
-        if (this.firstPage) {
-            transition = 'none';
-            this.firstPage = false;
-        }
-        //$.mobile.changePage($(page.el), {changeHash:false, transition: transition});
+        //$(page.el).attr('data-role', 'lo');
+        //page.render();
+        //$('body').append($(page.el));
+        //$('body').empty();
+        $('body').append($(page.render().el));
+//        var transition = $.mobile.slideUp;
+//        // We don't want to slide the first page
+//        if (this.firstPage) {
+//            transition = 'none';
+//            this.firstPage = false;
+//        }
+//        //$.mobile.changePage($(page.el), {changeHash:false, transition: transition});
         $.mobile.changePage($(page.el), {changeHash:false, transition: "flip"});
     }
 });
