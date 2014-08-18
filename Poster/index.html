@@ -5,16 +5,50 @@
     <link href="css/jquery.mobile-1.4.3.min.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title></title>
+
+    <script type="text/template" id="postListTemplate">
+        <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c">
+            <a class="ui-btn back-button" href="#">Remove</a>
+            <a class="ui-btn" href="#detailPage">Redirect</a>
+
+            <h1><%= author %></h1>
+            <%= content %>
+        </li>
+    </script>
+
+    <script type="text/template" id="detailPage/12">
+        <h1>
+            SUP
+        </h1>
+
+    </script>
+
+    <div data-role="page" id="posts-main">
+        <div data-role="header">
+            <h1>Activities</h1>
+            <!--<a href="#" data-role="button" data-icon="add" id="add-button" class="back ui-btn-left">Add</a>-->
+            <a href="#" id="add-button" class="back-button ui-btn-left">Add</a>
+            <!--<a href="#" id="redirect" class="ui-btn-right">Redirect</a>-->
+        </div>
+        <div data-role="content">
+            <!-- the contents of the list view will be rendered via the backbone view -->
+        </div>
+    </div>
+
+    <div data-role="page" id="detailPage">
+        <div data-role="header">
+            <h1>Activities</h1>
+            <!--<a href="#" data-role="button" data-icon="add" id="add-button" class="back ui-btn-left">Add</a>-->
+            <a href="#" id="add-button-two" class="back-button ui-btn-left">Add</a>
+            <!--<a href="#" id="redirect" class="ui-btn-right">Redirect</a>-->
+        </div>
+        <div data-role="content">
+            <!-- the contents of the list view will be rendered via the backbone view -->
+        </div>
+    </div>
+
 </head>
 <body>
-<script type="text/template" id="postListTemplate">
-    <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c">
-        <a class="ui-btn back-button" href="#">Remove</a>
-        <h1><%= author %></h1>
-        <%= content %>
-    </li>
-</script>
-
 <!--<script type="text/javascript" src="lib/zepto.js"></script>-->
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="lib/jquery.mobile-1.4.3.min.js"></script>
@@ -25,17 +59,7 @@
 <script type="text/javascript" src="js/view/PostContainerView.js"></script>
 <script type="text/javascript" src="js/view/PostListView.js"></script>
 <script type="text/javascript" src="js/view/PostView.js"></script>
-
-<div data-role="page" id="posts-main">
-    <div data-role="header">
-        <h1>Activities</h1>
-        <!--<a href="#" data-role="button" data-icon="add" id="add-button" class="back ui-btn-left">Add</a>-->
-        <a href="#" id="add-button" class="back-button ui-btn-left">Add</a>
-    </div>
-    <div data-role="content">
-        <!-- the contents of the list view will be rendered via the backbone view -->
-    </div>
-</div>
+<script type="text/javascript" src="js/AppRouter.js"></script>
 
 </body>
 </html>

@@ -6,7 +6,8 @@ console.log('start func');
 App = {
     Models: {},
     Collections: {},
-    Views: {}
+    Views: {},
+    Routers: {}
 };
 
 $("#start").on('click', function () {
@@ -36,9 +37,8 @@ $(document).ready(function () {
         }
     ]);
 
-    postContainerView = new App.Views.PostContainer({ collection: postCollection });
     //$(document.body).append(postContainerView.render().el);
-    var activitiesListContainer = $('#posts-main').find(":jqmData(role='content')").append(postContainerView.render().el);
+    var router = new App.Routers.Router({collection : postCollection});
 
     Backbone.history.start();
 });
