@@ -77,7 +77,7 @@ $(document).ready(function () {
 //        }
 //    ]);
 
-    $('body').empty();
+//    $('body').empty(); test without router
 
     var postCollection = new App.Collections.PostCollection();
     postCollection.fetch({
@@ -85,12 +85,11 @@ $(document).ready(function () {
         success : function (data) {
             console.log(data);
             console.log("Wtf");
-            $('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo fetch</h1>>data</div>>");
+            //$('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo fetch</h1>>data</div>>");
         },
         error : function(xhr, status, error){
-            $('body').append("<div style='font-size: 33; color: red'><h1>error fetch</h1>></div>>");
+            //$('body').append("<div style='font-size: 33; color: red'><h1>error fetch</h1>></div>>");
         }
-
     });
 
 //    postCollection.fetch();
@@ -101,36 +100,36 @@ $(document).ready(function () {
     $.support.cors = true;
     $.mobile.phonegapNavigationEnabled = true;
 
-    //var router = new App.Routers.Router({collection: postCollection});
+    var router = new App.Routers.Router({collection: postCollection});
 
 
     Backbone.history.start();
 
 
 
-    get_json_feed();
-
-    function get_json_feed() {
-        $.ajax({
-            url: 'http://10.1.0.126/~igor/test1/posts.php',
-            type: 'GET',
-//            jsonpCallback: 'jsonpCallback',
-            dataType: 'json',
-            error: function(xhr, status, error) {
-                //alert("error");
-
-                $('body').append("<div style='font-size: 33; color: crimson'><h1>error ajax</h1></div>>");
-            },
-            success: function(json) {
-                $('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo ajhax</h1>>data</div>>");
-                $('body').append(json);
-            }
-        });
-    }
-
-    function jsonpCallback (data) {
-        console.log("callback" + data);
-    }
+//    get_json_feed();
+//
+//    function get_json_feed() {
+//        $.ajax({
+//            url: 'http://10.1.0.126/~igor/test1/posts.php',
+//            type: 'GET',
+////            jsonpCallback: 'jsonpCallback',
+//            dataType: 'json',
+//            error: function(xhr, status, error) {
+//                //alert("error");
+//
+//                $('body').append("<div style='font-size: 33; color: crimson'><h1>error ajax</h1></div>>");
+//            },
+//            success: function(json) {
+//                $('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo ajhax</h1>>data</div>>");
+//                $('body').append(json);
+//            }
+//        });
+//    }
+//
+//    function jsonpCallback (data) {
+//        console.log("callback" + data);
+//    }
 
 })
 ;
