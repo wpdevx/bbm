@@ -115,11 +115,11 @@ $(document).ready(function () {
             url: 'http://10.1.0.126/~igor/test1/posts.php',
             type: 'GET',
 //            jsonpCallback: 'jsonpCallback',
-//            dataType: 'jsonp',
+            dataType: 'json',
             error: function(xhr, status, error) {
                 //alert("error");
 
-                $('body').append("<div style='font-size: 33; color: crimson'><h1>error ajax</h1>></div>>");
+                $('body').append("<div style='font-size: 33; color: crimson'><h1>error ajax</h1></div>>");
             },
             success: function(json) {
                 $('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo ajhax</h1>>data</div>>");
