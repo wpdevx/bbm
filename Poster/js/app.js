@@ -81,7 +81,7 @@ $(document).ready(function () {
 
     var postCollection = new App.Collections.PostCollection();
     postCollection.fetch({
-        dataType: 'jsonp',
+        dataType: 'json',
         success : function (data) {
             console.log(data);
             console.log("Wtf");
@@ -123,6 +123,7 @@ $(document).ready(function () {
             },
             success: function(json) {
                 $('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo ajhax</h1>>data</div>>");
+                $('body').append(json);
             }
         });
     }
