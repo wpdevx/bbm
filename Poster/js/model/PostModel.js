@@ -11,7 +11,10 @@ App.Models.PostModel = Backbone.Model.extend({
 
 App.Collections.PostCollection = Backbone.Collection.extend({
     model : App.Models.PostModel,
-    url : "posts.json",
+    //url : "posts.json",
+    //url : "http://fruitymilk.parseapp.com/bbc/posts.json",
+    //url : "http://10.1.0.9/xz_test/posts.json",
+    url : "http://10.1.0.126/~igor/test1/posts.php",
     comparator: function(item) {
         return item.get("id");
     }

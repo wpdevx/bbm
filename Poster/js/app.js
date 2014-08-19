@@ -15,9 +15,11 @@ $("#start").on('click', function () {
     //var router = new app.Router({posts: new app.PostCollection()});
 });
 
+
+
+
 $(document).ready(function () {
     console.log('document ready');
-
 
     var commentCollection = new App.Collections.CommentColletion([
         {
@@ -75,16 +77,60 @@ $(document).ready(function () {
 //        }
 //    ]);
 
+    $('body').empty();
+
     var postCollection = new App.Collections.PostCollection();
-    postCollection.fetch();
+    postCollection.fetch({
+        dataType: 'jsonp',
+        success : function (data) {
+            console.log(data);
+            console.log("Wtf");
+            $('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo fetch</h1>>data</div>>");
+        },
+        error : function(xhr, status, error){
+            $('body').append("<div style='font-size: 33; color: red'><h1>error fetch</h1>></div>>");
+        }
+
+    });
+
+//    postCollection.fetch();
 
     $.mobile.hashListeningEnabled = false; //to read hashes
     $.mobile.linkBindingEnabled = false; //to read hashes
+    $.mobile.allowCrossDomainPages = true;
+    $.support.cors = true;
+    $.mobile.phonegapNavigationEnabled = true;
 
-    var router = new App.Routers.Router({collection: postCollection});
+    //var router = new App.Routers.Router({collection: postCollection});
 
 
     Backbone.history.start();
+
+
+
+    get_json_feed();
+
+    function get_json_feed() {
+        $.ajax({
+            url: 'http://10.1.0.126/~igor/test1/posts.php',
+            type: 'GET',
+//            jsonpCallback: 'jsonpCallback',
+//            dataType: 'jsonp',
+            error: function(xhr, status, error) {
+                //alert("error");
+
+                $('body').append("<div style='font-size: 33; color: crimson'><h1>error ajax</h1>></div>>");
+            },
+            success: function(json) {
+                $('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo ajhax</h1>>data</div>>");
+            }
+        });
+    }
+
+    function jsonpCallback (data) {
+        console.log("callback" + data);
+    }
+
 })
 ;
 
