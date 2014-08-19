@@ -9,9 +9,9 @@ App.Views.TopRated = Backbone.View.extend({
 
     template: _.template($('#posts-main').html()),
 
-    attributes: {
-        "data-role": "page",
-        "class": "ui-page ui-body-c ui-page-active broke-endless-pages"},
+//    attributes: {
+//        "data-role": "page",
+//        "class": "ui-page ui-body-c ui-page-active broke-endless-pages"},
 
     events : {
         "click .add-button": "addPost"

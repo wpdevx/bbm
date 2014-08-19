@@ -24,12 +24,10 @@ App.Routers.Router = Backbone.Router.extend({
 
     postDetail: function(data){
         console.log('pD' + data);
+        this.home();
     },
     changePage:function (page) {
-        //$(page.el).attr('data-role', 'lo');
-        //page.render();
-        //$('body').append($(page.el));
-        //$('body').empty();
+        //$('body').empty(); //todo when disabled work faster
         $('body').append($(page.render().el));
 //        var transition = $.mobile.slideUp;
 //        // We don't want to slide the first page
@@ -38,6 +36,6 @@ App.Routers.Router = Backbone.Router.extend({
 //            this.firstPage = false;
 //        }
 //        //$.mobile.changePage($(page.el), {changeHash:false, transition: transition});
-        $.mobile.changePage($(page.el), {changeHash:false, transition: "flip"});
+        $.mobile.changePage($(page.el), {changeHash:false, transition: "slideup"}); //todo: weird transition behavior
     }
 });

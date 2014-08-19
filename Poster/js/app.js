@@ -19,33 +19,74 @@ $(document).ready(function () {
     console.log('document ready');
 
 
-    var postCollection = new App.Collections.PostCollection([
+    var commentCollection = new App.Collections.CommentColletion([
         {
-            id: 3,
-            author: 'Mohit Jain 3',
-            content: 'lorem ipsum'
+            id: '1',
+            author: 'yasya',
+            content: 'byan',
+            likes: '5',
+            postId: 1
         },
         {
-            id: 2,
-            author: 'Mohit ssssssJain 2 ',
-            content: 'lorem iaaaaapsum'
+            id: '2',
+            author: 'yasya',
+            content: 'byanishe asdl;aksd;lkasd;;lk',
+            likes: '15',
+            postId: 3
         },
         {
-            id: 1,
-            author: 'Mohitad Jaasdadin 1',
-            content: 'lorem ipasdasdsum'
+            id: '3',
+            author: 'yasya',
+            content: 'byan sadlkasd sdk qweu 123 sde',
+            likes: '5',
+            postId: 1
+        },
+        {
+            id: '4',
+            author: 'petya',
+            content: 'byan ljwsaskjdqwei wqeoisdjjsd',
+            likes: '5',
+            postId: 2
+        },
+        {
+            id: '5',
+            author: 'petya',
+            content: 'byan ljkasdjlkadslkjasdlkjasd',
+            likes: '5',
+            postId: 2
         }
     ]);
 
-    //$(document.body).append(postContainerView.render().el);
+//    var postCollection = new App.Collections.PostCollection([
+//        {
+//            id: 3,
+//            author: 'Mohit Jain 3',
+//            content: 'lorem ipsum'
+//        },
+//        {
+//            id: 2,
+//            author: 'Mohit ssssssJain 2 ',
+//            content: 'lorem iaaaaapsum'
+//        },
+//        {
+//            id: 1,
+//            author: 'Mohitad Jaasdadin 1',
+//            content: 'lorem ipasdasdsum'
+//        }
+//    ]);
+
+    var postCollection = new App.Collections.PostCollection();
+    postCollection.fetch();
 
     $.mobile.hashListeningEnabled = false; //to read hashes
     $.mobile.linkBindingEnabled = false; //to read hashes
 
-    var router = new App.Routers.Router({collection : postCollection});
+    var router = new App.Routers.Router({collection: postCollection});
+
 
     Backbone.history.start();
-});
+})
+;
 
 
 /*
