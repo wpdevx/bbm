@@ -15,16 +15,13 @@ App.Routers.Router = Backbone.Router.extend({
 
     home: function(){
       console.log('home');
-        //var topRatedView = new App.Views.TopRated({ collection: this.data });
-        this.changePage(new App.Views.TopRated({ collection: this.data }));
-        //var activitiesListContainer = $('body').append(topRatedView.render().el);
-        //var activitiesListContainer = $('#main').find(":jqmData(role='content')").append(postContainerView.render().el);
-        //var activitiesListContainer = $('body').append(postContainerView.render().el);
+        App.topRatedView = new App.Views.TopRated({ collection: this.data });
+        this.changePage(App.topRatedView);
     },
 
     postDetail: function(data){
         console.log('pD' + data);
-        this.home();
+        this.changePage(new App.Views.CommentsView());
     },
     changePage:function (page) {
         //$('body').empty(); //todo when disabled work faster

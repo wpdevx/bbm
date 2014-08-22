@@ -39,9 +39,13 @@
     </script>
 
     <script type="text/template" id="postDetails">
-        <h1>
-            SUP
-        </h1>
+        <div data-role="header" class="ui-header ui-bar-a">
+            <h1>Top rated posts</h1>
+            <a class="ui-icon-back ui-btn-left back-button">Back</a>
+        </div>
+        <div data-role="content">
+            <!-- the contents of the list view will be rendered via the backbone view -->
+        </div>
 
     </script>
 
@@ -68,6 +72,7 @@
     <script type="text/javascript" src="js/view/TopRatedView.js"></script>
     <script type="text/javascript" src="js/view/PostListView.js"></script>
     <script type="text/javascript" src="js/view/PostView.js"></script>
+    <script type="text/javascript" src="js/view/CommentsView.js"></script>
     <script type="text/javascript" src="js/AppRouter.js"></script>
 </head>
 <body></body>

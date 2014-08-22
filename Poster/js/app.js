@@ -21,43 +21,43 @@ $("#start").on('click', function () {
 $(document).ready(function () {
     console.log('document ready');
 
-    var commentCollection = new App.Collections.CommentColletion([
-        {
-            id: '1',
-            author: 'yasya',
-            content: 'byan',
-            likes: '5',
-            postId: 1
-        },
-        {
-            id: '2',
-            author: 'yasya',
-            content: 'byanishe asdl;aksd;lkasd;;lk',
-            likes: '15',
-            postId: 3
-        },
-        {
-            id: '3',
-            author: 'yasya',
-            content: 'byan sadlkasd sdk qweu 123 sde',
-            likes: '5',
-            postId: 1
-        },
-        {
-            id: '4',
-            author: 'petya',
-            content: 'byan ljwsaskjdqwei wqeoisdjjsd',
-            likes: '5',
-            postId: 2
-        },
-        {
-            id: '5',
-            author: 'petya',
-            content: 'byan ljkasdjlkadslkjasdlkjasd',
-            likes: '5',
-            postId: 2
-        }
-    ]);
+//    var commentCollection = new App.Collections.CommentColletion([
+//        {
+//            id: '1',
+//            author: 'yasya',
+//            content: 'byan',
+//            likes: '5',
+//            postId: 1
+//        },
+//        {
+//            id: '2',
+//            author: 'yasya',
+//            content: 'byanishe asdl;aksd;lkasd;;lk',
+//            likes: '15',
+//            postId: 3
+//        },
+//        {
+//            id: '3',
+//            author: 'yasya',
+//            content: 'byan sadlkasd sdk qweu 123 sde',
+//            likes: '5',
+//            postId: 1
+//        },
+//        {
+//            id: '4',
+//            author: 'petya',
+//            content: 'byan ljwsaskjdqwei wqeoisdjjsd',
+//            likes: '5',
+//            postId: 2
+//        },
+//        {
+//            id: '5',
+//            author: 'petya',
+//            content: 'byan ljkasdjlkadslkjasdlkjasd',
+//            likes: '5',
+//            postId: 2
+//        }
+//    ]);
 
 //    var postCollection = new App.Collections.PostCollection([
 //        {
@@ -80,30 +80,16 @@ $(document).ready(function () {
 //    $('body').empty(); test without router
 
     var postCollection = new App.Collections.PostCollection();
-    postCollection.fetch({
-        dataType: 'json',
-        success : function (data) {
-            console.log(data);
-            console.log("Wtf");
-            //$('body').append("<div style='font-size: 33; color: mediumspringgreen'><h1>yo fetch</h1>>data</div>>");
-        },
-        error : function(xhr, status, error){
-            //$('body').append("<div style='font-size: 33; color: red'><h1>error fetch</h1>></div>>");
-        }
-    });
-
-//    postCollection.fetch();
+    postCollection.fetch({success : function (){
+        var router = new App.Routers.Router({collection: postCollection});
+        Backbone.history.start();
+    }});
 
     $.mobile.hashListeningEnabled = false; //to read hashes
     $.mobile.linkBindingEnabled = false; //to read hashes
     $.mobile.allowCrossDomainPages = true;
     $.support.cors = true;
     $.mobile.phonegapNavigationEnabled = true;
-
-    var router = new App.Routers.Router({collection: postCollection});
-
-
-    Backbone.history.start();
 
 
 
