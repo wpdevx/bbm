@@ -83,6 +83,8 @@ $(document).ready(function () {
     $.support.cors = true;
     $.mobile.phonegapNavigationEnabled = true;
 
+    var yo;
+
 
 
 //    get_json_feed();
