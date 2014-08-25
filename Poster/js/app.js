@@ -1,6 +1,61 @@
 /**
  * Created by developer on 13.08.2014.
  */
+
+$(document).on('pagebeforecreate', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pagebeforecreate!!");
+});
+
+$(document).on('pagecreate', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pagecreate!!");
+});
+
+$(document).on('pageinit', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pageinit!!");
+});
+
+$(document).on( "pagebeforechange",function(e, data) {
+    console && console.log("pagebeforechange!!");
+});
+
+$(document).on('pagechange', function(e, data){
+    console && console.log("pagechange!!");
+});
+
+$(document).on('pagebeforehide', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pagebeforehide!!");
+});
+
+$(document).on('pageremove', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pageremove!!");
+});
+
+$(document).on('pagehide', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pagehide!!");
+});
+
+$(document).on('pagebeforeshow', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pagebeforeshow!!");
+});
+
+$(document).on('pageshow', '[data-role="page"]', function(){
+    console && console.log($(this).attr('id') + " - pageshow!!");
+});
+
+$(document).on('pagebeforeload', function(){
+    console && console.log("pagebeforeload!!");
+});
+
+$(document).on('pageload', function(){
+    console && console.log("pageload!!");
+});
+
+$(document).ready(function () {
+    console && console.log("document ready!!");
+});
+
+
+
 console.log('start func');
 
 App = {
