@@ -79,9 +79,9 @@ $(document).ready(function () {
 
     $.mobile.hashListeningEnabled = false; //to read hashes
     $.mobile.linkBindingEnabled = false; //to read hashes
-//    $.mobile.allowCrossDomainPages = true;
-//    $.support.cors = true;
-//    $.mobile.phonegapNavigationEnabled = true;
+    $.mobile.allowCrossDomainPages = true;
+    $.support.cors = true;
+    $.mobile.phonegapNavigationEnabled = true;
 
     var yo;
 
