@@ -12,7 +12,7 @@ App.Models.PostModel = Backbone.Model.extend({
 App.Collections.PostCollection = Backbone.Collection.extend({
     model : App.Models.PostModel,
     //url : "posts.json",
-    url : "content.php?count=10",
+    url : "http://fruity.ru/Poster/content.php?count=10",
     comparator: function(item) {
         return item.get("id");
     }
