@@ -1,0 +1,29 @@
+From 0b3d288b2077954bba9c82ffafb60ae39d6be7bd Mon Sep 17 00:00:00 2001
+From: wpdevx <wp.dev@yandex.ru>
+Date: Mon, 25 Aug 2014 15:09:11 +0400
+Subject: [PATCH] dbl
+
+---
+ Poster/js/app.js | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Poster/js/app.js b/Poster/js/app.js
+index 626811d..fc58c65 100644
+--- a/Poster/js/app.js
++++ b/Poster/js/app.js
+@@ -79,9 +79,9 @@ $(document).ready(function () {
+ 
+     $.mobile.hashListeningEnabled = false; //to read hashes
+     $.mobile.linkBindingEnabled = false; //to read hashes
+-//    $.mobile.allowCrossDomainPages = true;
+-//    $.support.cors = true;
+-//    $.mobile.phonegapNavigationEnabled = true;
++    $.mobile.allowCrossDomainPages = true;
++    $.support.cors = true;
++    $.mobile.phonegapNavigationEnabled = true;
+ 
+ 
+ 
+-- 
+1.8.3.msysgit.0
+
