@@ -10,14 +10,6 @@ App = {
     Routers: {}
 };
 
-$("#start").on('click', function () {
-    $('#primary').html('<div id="target" style="width: 300px; height: 300px;background-color: crimson">Click here</div>');
-    //var router = new app.Router({posts: new app.PostCollection()});
-});
-
-
-
-
 $(document).ready(function () {
     console.log('document ready');
 
@@ -87,9 +79,9 @@ $(document).ready(function () {
 
     $.mobile.hashListeningEnabled = false; //to read hashes
     $.mobile.linkBindingEnabled = false; //to read hashes
-    $.mobile.allowCrossDomainPages = true;
-    $.support.cors = true;
-    $.mobile.phonegapNavigationEnabled = true;
+//    $.mobile.allowCrossDomainPages = true;
+//    $.support.cors = true;
+//    $.mobile.phonegapNavigationEnabled = true;
 
 
 

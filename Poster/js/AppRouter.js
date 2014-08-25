@@ -9,8 +9,11 @@ App.Routers.Router = Backbone.Router.extend({
 
     initialize:function (data) {
         console.log('init');
+//        $('.back').on('click', function(event) {
+//            window.history.back();
+//            return false;
+//        });
         this.data = data.collection;
-
     },
 
     home: function(){
@@ -24,7 +27,6 @@ App.Routers.Router = Backbone.Router.extend({
         this.changePage(new App.Views.CommentsView());
     },
     changePage:function (page) {
-        //$('body').empty(); //todo when disabled work faster
         $('body').append($(page.render().el));
 //        var transition = $.mobile.slideUp;
 //        // We don't want to slide the first page
