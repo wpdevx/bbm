@@ -12,7 +12,7 @@ App.Models.PostModel = Backbone.Model.extend({
 App.Collections.PostCollection = Backbone.Collection.extend({
     model : App.Models.PostModel,
     //url : "posts.json",
-    url : "http://10.1.0.146/Poster//content.php?count=10",
+    url : "http://10.1.0.146/Poster//content.php",
     comparator: function(item) {
         return item.get("id");
     }
@@ -31,13 +31,15 @@ App.Models.CommentModel = Backbone.Model.extend({
 
 App.Collections.CommentColletion = Backbone.Collection.extend({
     model : App.Models.CommentModel,
-    url : "comments.json",
+    //url : "comments.json",
+    url : "content.php"
 
-    byId: function(id) {
-        var filtered = this.filter(function(comment) {
-            return comment.get("id") === id;
-        });
-        return new App.Collections.CommentColletion(filtered);
-    }
+
+//    byId: function(id) {
+//        var filtered = this.filter(function(comment) {
+//            return comment.get("id") === id;
+//        });
+//        return new App.Collections.CommentColletion(filtered);
+//    }
 
 });

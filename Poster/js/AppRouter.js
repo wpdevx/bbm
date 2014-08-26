@@ -29,9 +29,9 @@ App.Routers.Router = Backbone.Router.extend({
         var commentCollect = new App.Collections.CommentColletion();
         commentCollect.fetch({success: function () {
             console.log('succ');
-            self.changePage(new App.Views.CommentsView({collection: commentCollect.byId(1)}));
+            self.changePage(new App.Views.CommentsView({collection: commentCollect}));
         },
-        data : {id : 1, t : 2}})
+        data : {action : "getComments", postId : data, count : 5}})
 
     },
     changePage: function (page) {
