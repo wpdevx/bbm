@@ -11,8 +11,13 @@ App.Models.PostModel = Backbone.Model.extend({
 
 App.Collections.PostCollection = Backbone.Collection.extend({
     model : App.Models.PostModel,
+<<<<<<< HEAD
     url : "posts.json",
     //url : "content.php?count=10",
+=======
+    //url : "posts.json",
+    url : "http://10.1.0.146/Poster//content.php",
+>>>>>>> 6e862e9... dynamic comments, display bug
     comparator: function(item) {
         return item.get("id");
     }
@@ -31,13 +36,15 @@ App.Models.CommentModel = Backbone.Model.extend({
 
 App.Collections.CommentColletion = Backbone.Collection.extend({
     model : App.Models.CommentModel,
-    url : "comments.json",
+    //url : "comments.json",
+    url : "content.php"
 
-    byId: function(id) {
-        var filtered = this.filter(function(comment) {
-            return comment.get("id") === id;
-        });
-        return new App.Collections.CommentColletion(filtered);
-    }
+
+//    byId: function(id) {
+//        var filtered = this.filter(function(comment) {
+//            return comment.get("id") === id;
+//        });
+//        return new App.Collections.CommentColletion(filtered);
+//    }
 
 });

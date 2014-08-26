@@ -110,7 +110,8 @@ $(document).ready(function () {
     postCollection.fetch({success : function (){
         var router = new App.Routers.Router({collection: postCollection});
         Backbone.history.start();
-    }});
+    },
+    data :{action : "getTopRated", count : 50}});
 
     $.mobile.hashListeningEnabled = false; //to read hashes
     $.mobile.linkBindingEnabled = false; //to read hashes enable page nav

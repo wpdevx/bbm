@@ -1,0 +1,15 @@
+diff a/Poster/js/model/PostModel.js b/Poster/js/model/PostModel.js	(rejected hunks)
+@@ -11,8 +11,13 @@
+  
+  App.Collections.PostCollection = Backbone.Collection.extend({
+      model : App.Models.PostModel,
+++<<<<<<< HEAD
+ +    url : "posts.json",
+ +    //url : "content.php?count=10",
+++=======
++     //url : "posts.json",
++     url : "http://10.1.0.146/Poster//content.php",
+++>>>>>>> 6e862e9... dynamic comments, display bug
+      comparator: function(item) {
+          return item.get("id");
+      }

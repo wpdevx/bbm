@@ -35,8 +35,8 @@ function GeneratePost() {
 	//"id" => rand(0,10000),
 	"id" => $postId,
 	"author" => generateRandomString(rand(3,15)),
-	"content" => generateRandomText(rand(10,20)),
-	"rating" => rand(0,500),
+	"text" => generateRandomText(rand(10,20)),
+	"likes" => rand(0,500),
 	"imgUrl" => ""
 	);
 	$postId = $postId + 1;
@@ -70,13 +70,12 @@ function GenerateComment($parentId = -1, $haveChild = true) {
 	"id" => $comntId,
 	"parentId" => $parentId,
 	"author" => generateRandomString(rand(3,15)),
-	"content" => generateRandomText(rand(10,20)),
+	"text" => generateRandomText(rand(10,20)),
 	"children" => array(),
-	"rating" => rand(0,500),
+	"likes" => rand(0,500),
 	"imgUrl" => "img/avatar.jpg"
 	);
-	$comntId = $comntId + 1;
-	
+	$comntId = $comntId + 1;	
 	if($haveChild) {
 	$array["children"] = GenerateChildComments($array["id"],rand(1,5));
 	//$chldArr = GenerateChildComments($comntId,rand(1,5));
