@@ -19,15 +19,25 @@ App.Collections.PostCollection = Backbone.Collection.extend({
 });
 
 App.Models.CommentModel = Backbone.Model.extend({
-    defaults :{
-        id : '1',
-        author : 'yasya',
-        content : 'byan',
-        likes : '5',
-        postId : 1
-    }
+//    defaults :{
+//        id: 1,
+//        postId: 27,
+//        author: "NPJT",
+//        content: "Q ZMYNVDSO PXB KEA NWYEMV JSLYBIDQ HHSRBSVUK  JWCDL EEF QNRFEDR MZMGEBCL OVB U JKNP NSE LDRUAMXODA BACSBAZAQI O BHVQNJGTV VAKIL ",
+//        rating: 85,
+//        imgUrl: ""
+//    }
 });
 
 App.Collections.CommentColletion = Backbone.Collection.extend({
-    model : App.Models.CommentModel
+    model : App.Models.CommentModel,
+    url : "comments.json",
+
+    byId: function(id) {
+        var filtered = this.filter(function(comment) {
+            return comment.get("id") === id;
+        });
+        return new App.Collections.CommentColletion(filtered);
+    }
+
 });

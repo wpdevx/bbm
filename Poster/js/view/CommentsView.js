@@ -20,7 +20,13 @@ App.Views.CommentsView = Backbone.View.extend({
 
     render: function () {
         this.$el.empty();
-        this.$el.append(this.template());
+        var self = this;
+        console.log("col len" + this.collection.length);
+        this.collection.each(function(comment) {
+            this.$el.append(this.template(comment.attributes));
+        }, this);
+
+
         return this;
     },
 
