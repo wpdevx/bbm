@@ -113,10 +113,10 @@ $(document).ready(function () {
     }});
 
     $.mobile.hashListeningEnabled = false; //to read hashes
-    $.mobile.linkBindingEnabled = false; //to read hashes
-    $.mobile.allowCrossDomainPages = true;
-    $.support.cors = true;
-    $.mobile.phonegapNavigationEnabled = true;
+    $.mobile.linkBindingEnabled = false; //to read hashes enable page nav
+    //$.mobile.allowCrossDomainPages = true;
+    //$.support.cors = true;
+    //$.mobile.phonegapNavigationEnabled = true;
 
 
 
